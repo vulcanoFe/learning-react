@@ -1,0 +1,21 @@
+{
+  "header.menu.home": "Home",
+
+  "home.titolo": "Cosa vuoi fare?",
+  "home.card.tictactoe.titolo": "Tic Tac Toe",
+  "home.card.tictactoe.sottotitolo": "Tris",
+  "home.card.tictactoe.descrizionebreve": "Vince il giocatore che mette tre simboli uguali in fila",
+  "home.cardaction.gioca": "Gioca",
+
+  "tictactoe.titolo": "Tic Tac Toe",
+
+  "notfound.descrizione1": "La pagina che stai cercando non esiste",
+  "notfound.descrizione2": "o potrebbe essere temporaneamente non disponibile.",
+  "notfound.percontinuare": "Per continuare torna alla Home",
+
+  "errore.caricamentoapi.titolo": "Siamo spiacenti si è verificato un errore.",
+  "errore.caricamentoapi.descrizione": "Siamo spiacenti ma si è verificato un errore durante il caricamento. Si prega di provare a ricaricare cliccando sul bottone sottostante. Se il problema persiste contattare l'assistenza.",
+
+  "footer.testo1": "Footer"
+ 
+}

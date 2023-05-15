@@ -1,0 +1,72 @@
+.l-top-header {
+  position: relative;
+  width: 100%;
+  z-index: 899;
+  border-bottom: 1px solid #cecece;
+}
+
+.l-top-header .c-note-head {
+  background-color: #8F2424;
+  height: 30px;
+}
+
+
+body.is-scrolling:not(.no-scroll) .c-note-head {
+  display: none;
+}
+
+/* .l-header */
+.l-header {
+  position: relative;
+  height: 100px;
+  line-height: 100px;
+}
+
+.l-header.is-scrolling:not(.no-scroll) {
+  background-color: #fff;
+  height: 86px;
+  line-height: 86px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 899;
+}
+
+.l-header.is-scrolling:not(.no-scroll) .c-menu-button {
+  height: 86px;
+}
+
+.l-header.is-scrolling:not(.no-scroll) .c-menu-button span {
+  bottom: 13px;
+}
+
+.c-main-logo {
+  float: left;
+  padding: 0;
+}
+
+.c-main-logo a {
+  display: inline-block;
+  height: 61px;
+  margin: 0 0 0 -3px;
+  outline: 0;
+  padding: 3px;
+  vertical-align: middle;
+  width: 368px;
+}
+
+.c-main-logo a:focus-visible {
+  border-radius: 6px;
+  box-shadow: 0 0 0 3px #264d7a;
+}
+
+.c-main-logo a:active {
+  box-shadow: none;
+}
+
+.c-main-logo img {
+  vertical-align: top;
+  padding-top: 25px;
+  width: 300px;
+}

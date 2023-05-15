@@ -1,0 +1,19 @@
+@import-normalize;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* 1rem = 10px */
+  font-size: 14px;
+}
+
+body {
+  color: #202020;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1;
+  overflow-x: hidden;
+}

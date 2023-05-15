@@ -1,0 +1,8 @@
+footer p {
+  line-height: 1.5;
+}
+
+footer {
+  background-color: #8F2424;
+  min-height: 100px;
+}
