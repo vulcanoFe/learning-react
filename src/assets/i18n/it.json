@@ -5,7 +5,11 @@
   "home.card.tictactoe.titolo": "Tic Tac Toe",
   "home.card.tictactoe.sottotitolo": "Tris",
   "home.card.tictactoe.descrizionebreve": "Vince il giocatore che mette tre simboli uguali in fila",
+  "home.card.fruitandvegstore.titolo": "Fruit&Veg Store",
+  "home.card.fruitandvegstore.sottotitolo": "Online Store",
+  "home.card.fruitandvegstore.descrizionebreve": "Esempio tabella prodotti",
   "home.cardaction.gioca": "Gioca",
+  "home.cardaction.vai": "Vai",
 
   "tictactoe.titolo": "Tic Tac Toe",
 

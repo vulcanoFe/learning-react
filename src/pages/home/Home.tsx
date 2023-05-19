@@ -1,14 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import HomeCard from "./components/HomeCard";
 
 const Home = () => {
 
   const { t } = useTranslation();
-  const navigate = useNavigate();
-
-  const goTicTacToe = () => {
-    navigate("/tic-tac-toe");
-  }
 
   return (
     <>
@@ -20,14 +15,18 @@ const Home = () => {
         </div>
         <div className="row">
           <div className="col-sm-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{t("home.card.tictactoe.titolo")}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">{t("home.card.tictactoe.sottotitolo")}</h6>
-                <p className="card-text">{t("home.card.tictactoe.descrizionebreve")}</p>
-                <button onClick={goTicTacToe} className="card-link">{t("home.cardaction.gioca")}</button>
-              </div>
-            </div>
+            <HomeCard 
+              titolo="home.card.tictactoe.titolo" 
+              sottotitolo="home.card.tictactoe.sottotitolo" 
+              descrizioneBreve="home.card.tictactoe.descrizionebreve" 
+              linkLabel="home.cardaction.gioca" pagePath="/tic-tac-toe"/>
+          </div>
+          <div className="col-sm-4">
+            <HomeCard 
+              titolo="home.card.fruitandvegstore.titolo" 
+              sottotitolo="home.card.fruitandvegstore.sottotitolo" 
+              descrizioneBreve="home.card.fruitandvegstore.descrizionebreve" 
+              linkLabel="home.cardaction.vai" pagePath="/fruit-and-veg-store"/>
           </div>
         </div>
       </div>
