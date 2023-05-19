@@ -1,6 +1,7 @@
 export class Product {
 
   constructor (
+    public id:string,
     public category:string,
     public price:string,
     public stocked:boolean,
@@ -9,6 +10,7 @@ export class Product {
 
 	public static adapt(item:any) {
 		return new Product(
+      item.id,
 			item.category,
 			item.price,
 			item.stocked,

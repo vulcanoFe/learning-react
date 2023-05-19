@@ -1,4 +1,19 @@
-const ProductTable = () => {
+import { Product } from "../models/Product";
+
+interface ProductTableProps {
+  products:Product[]
+}
+const ProductTable = ({products}:ProductTableProps) => {
+
+  let lastCategory = "";
+  let rows:any[] = [];
+  products.forEach((prod:Product) => {
+    if (prod.category!==lastCategory) {
+      rows.push(<ProductCategoryRow category={prod.category} key={prod.category} />);
+    }
+    rows.push(<ProductRow product={prod} key={prod.id}/>);
+    lastCategory = prod.category;
+  });
 
   return (
     <>
@@ -10,12 +25,7 @@ const ProductTable = () => {
           </tr>
         </thead>
         <tbody>
-          <ProductCategoryRow categoryLabel="Fruits" />
-          <ProductRow price={10} name="banana" />
-          <ProductRow price={10} name="apple" />
-          <ProductRow price={10} name="mango" />
-          <ProductCategoryRow categoryLabel="Vegetables" />
-          <ProductRow price={10} name="spinach" />
+          {rows}
         </tbody>
       </table>
     </>
@@ -25,25 +35,29 @@ const ProductTable = () => {
 export default ProductTable;
 
 interface ProdCatProps {
-  categoryLabel:string
+  category:string
 }
-const ProductCategoryRow = ({categoryLabel}:ProdCatProps) => {
+const ProductCategoryRow = ({category}:ProdCatProps) => {
   return (
     <tr>
-      <td colSpan={2}>{categoryLabel}</td>
+      <th colSpan={2}>{category}</th>
     </tr>
   );
 }
 
 interface ProdProps {
-  name:string,
-  price:number
+  product:Product
 }
-const ProductRow = ({price, name}:ProdProps) => {
+const ProductRow = ({product}:ProdProps) => {
+
+  const name = product.stocked ? product.name :
+    <span style={{ color: 'red' }}>
+      {product.name}
+    </span>;
   return (
     <tr>
       <td>{name}</td>
-      <td>{price}</td>
+      <td>{product.price}</td>
     </tr>
   )
 }

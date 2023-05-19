@@ -1,7 +1,14 @@
 const SearchBar = () => {
   return (
     <>
-      <p>Search Bar</p>
+      <form>
+        <input type="text" placeholder="Search..." />
+        <label htmlFor="onlyinstore">
+          <input id="onlyinstore" type="checkbox" />
+          {' '}
+          Only show product in stock
+        </label>
+      </form>
     </>
   );
 }

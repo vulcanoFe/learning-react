@@ -1,15 +1,17 @@
-import useProducts from "../hooks/useProducts";
+import { Product } from "../models/Product";
 import ProductTable from "./ProductTable";
 import SearchBar from "./SearchBar";
 
-const FilterableProductTable = () => {
+interface Props {
+  products:Product[]
+}
 
-  const products = useProducts();
+const FilterableProductTable = ({products}:Props) => {
 
   return(
     <>
       <SearchBar />
-      <ProductTable />
+      <ProductTable products={products}/>
     </>
   )
 }
