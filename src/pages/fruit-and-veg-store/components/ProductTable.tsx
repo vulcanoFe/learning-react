@@ -1,27 +1,46 @@
 import { Product } from "../models/Product";
 
-interface ProductTableProps {
-  products:Product[]
+interface Props {
+  products:Product[],
+  filterText:string,
+  inStockOnly:boolean
 }
-const ProductTable = ({products}:ProductTableProps) => {
+const ProductTable = ({products, filterText, inStockOnly}:Props) => {
 
+  const rows:any[] = [];
   let lastCategory = "";
-  let rows:any[] = [];
+
   products.forEach((prod:Product) => {
-    if (prod.category!==lastCategory) {
-      rows.push(<ProductCategoryRow category={prod.category} key={prod.category} />);
+    if(applyFilter(prod)) {
+      if (prod.category!==lastCategory) {
+        rows.push(<ProductCategoryRow category={prod.category} key={prod.category} />);
+      }
+      rows.push(<ProductRow product={prod} key={prod.id}/>);
+      lastCategory = prod.category;
     }
-    rows.push(<ProductRow product={prod} key={prod.id}/>);
-    lastCategory = prod.category;
   });
+
+  /**
+   * @param product 
+   * @returns boolean true if product must be display after evaluate applied filters
+   */
+  function applyFilter(product:Product):boolean {
+    if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+      return false;
+    }
+    if (inStockOnly && !product.stocked) {
+      return false;
+    }
+    return true;
+  }
 
   return (
     <>
-      <table>
+      <table className="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Price</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
           </tr>
         </thead>
         <tbody>
